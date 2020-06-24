@@ -1,0 +1,26 @@
+@mixin Block {
+    min-height: 100vh;
+}
+
+@mixin def_btn($bg, $color, $border) {
+    padding: .8rem 1.3rem;
+    border: 2px solid $border;
+    border-radius: 50px;
+    transition: $reg_tran;
+    background: $bg;
+    color: $color;
+    cursor: pointer;
+    font-family: $font;
+    font-size: $sm_txt;
+
+    &:hover {
+        background: $border;
+        color: $dark_color;
+    }
+}
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

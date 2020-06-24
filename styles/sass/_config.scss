@@ -1,0 +1,28 @@
+//COLOURS
+$dark_color:#333;
+$light_color:#fff;
+$contrast_color: #D1E154;
+
+//TEXT
+$ms_txt: 7rem;
+$md_txt: 3rem;
+$title: 2rem;
+$sm_txt: 1.2rem;
+$lt_txt: 1rem;
+
+//TRANSITION
+$reg_tran: .7s;
+
+//FONT
+@font-face {
+    font-family: "Product Sans Regular";
+    src: url("/assets/fonts/Product\ Sans\ Regular.ttf");
+}
+
+@font-face {
+    font-family: "Product Sans Bold";
+    src: url("/assets/fonts/Product\ Sans\ Bold.ttf");
+}
+
+$font: "Product Sans Regular";
+$font_bold: "Product Sans Bold";

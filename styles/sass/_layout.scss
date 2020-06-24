@@ -1,0 +1,360 @@
+//NAVBAR
+
+
+nav {
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background: $light_color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $dark_color;
+    transition: $reg_tran ease;
+    cursor: pointer;
+    z-index: 9999;
+
+    &:hover {
+        width: 35vw;
+
+        .navbar {
+            display: block;
+        }
+    }
+
+    h1 {
+        font-size: $md_txt;
+        font-style: italic;
+        font-family: $font_bold;
+
+    }
+
+
+    .navbar {
+        display: none;
+
+        .navPosition {
+            display: grid;
+            grid-template-columns: repeat(2, 200px);
+            grid-template-areas:
+                "menu""media";
+            padding-top: 7rem;
+
+            li>a {
+                color: $dark_color;
+                transition: .2s;
+
+                &:hover {
+                    color: $contrast_color;
+                }
+            }
+
+            .navMenu {
+                @include flexCenter;
+                grid-area: "menu";
+
+                li {
+                    margin-top: 1rem;
+                    font-size: $md_txt;
+                    font-family: $font_bold;
+
+                }
+            }
+
+            .navMedia {
+                @include flexCenter;
+                grid-area: "media";
+
+                li {
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}
+
+//HERO SECTION
+.Block {
+    @include Block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $light_color;
+
+    .videoContainer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: -2;
+    }
+
+    .title {
+        padding: 10rem 0 0 10rem;
+
+        h1 {
+            font-size: $ms_txt;
+            letter-spacing: 4px;
+        }
+
+        p {
+            font-size: $sm_txt;
+        }
+    }
+
+    .rightNav {
+        padding-bottom: 4rem;
+        font-size: $sm_txt;
+
+        ul {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        a {
+            margin-right: 2.5rem;
+            color: $light_color;
+        }
+
+        .btn {
+            @include def_btn(none, $light_color, $light_color);
+        }
+    }
+}
+
+//SECOND SECTION
+.container {
+    color: $dark_color;
+    @include flexCenter;
+    text-align: center;
+    font-family: $font;
+
+    h3 {
+        margin-top: 2rem;
+        font-size: $title;
+    }
+
+    .imgContainer {
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        margin: 2rem 6rem;
+
+        .promoImg {
+            position: relative;
+            cursor: pointer;
+            transition: transform $reg_tran;
+
+            &:hover {
+                transform: translateY(-13px);
+            }
+
+            .infoImg {
+                position: absolute;
+                z-index: 100;
+                position: absolute;
+                color: $light_color;
+                left: 0px;
+                top: 350px;
+                padding: 1rem;
+
+                h2 {
+                    letter-spacing: 1px;
+                    font-weight: 100;
+
+                    span {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//THIRD BLOCK
+.sub {
+    color: $dark_color;
+    @include flexCenter;
+
+    .imgTitle {
+        margin-bottom: 2rem;
+        font-size: $sm_txt;
+    }
+
+    .bgContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 600px);
+        grid-template-areas:
+            "imgTitle offers";
+        grid-gap: 3rem;
+        align-items: center;
+
+        .blockTitle {
+            grid-area: "imgTitle";
+            margin-left: 8rem;
+
+
+            img {
+                height: 350px;
+            }
+        }
+
+        .offerOption {
+            grid-area: "offers";
+            @include flexCenter;
+
+            .promoSec {
+                display: flex;
+                padding: .4rem .4rem;
+                border-radius: 10px;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+                width: 600px;
+                cursor: pointer;
+                transition: transform $reg_tran;
+
+                &:nth-child(2) {
+                    margin: 1rem 0;
+                }
+
+                &:hover {
+                    transform: translateX(1rem);
+                }
+
+                .iconBg {
+                    background: $contrast_color;
+                    padding: 2rem 2.3rem;
+                    border-radius: 10px;
+                }
+
+                .promoInfo {
+                    padding: 1rem 1.5rem;
+                }
+
+                .arrow {
+                    width: 3rem;
+                    color: $contrast_color;
+                }
+            }
+        }
+    }
+
+    .mailPromo {
+        background: $dark_color;
+        color: $light_color;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1.5rem;
+        padding: 4rem 0;
+
+        h2 {
+            font-size: $title;
+        }
+
+        input {
+            background: none;
+            border: none;
+            border-bottom: 2px solid $contrast_color;
+            width: 350px;
+            padding: .5rem;
+            font-family: $font;
+            font-size: $sm_txt;
+            color: $light_color;
+            margin: 0 2rem;
+        }
+
+        button {
+            //padding: 0.1rem 1rem;
+            @include def_btn(none, $light_color, $contrast_color);
+        }
+    }
+}
+
+.footer {
+    @include flexCenter;
+    height: 15vh;
+    color: $dark_color;
+    justify-content: center;
+}
+
+//CONTACT PAGE
+.mainForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        "left right";
+    color: $dark_color;
+
+    h2 {
+        font-size: $md_txt;
+        margin-bottom: 3rem;
+        border-bottom: 4px solid $contrast_color;
+        padding: 1rem;
+    }
+
+    input {
+        font-family: $font;
+        font-size: $sm_txt;
+        border: none;
+        padding: .6rem;
+        border-bottom: 2px solid $contrast_color;
+        width: 400px;
+    }
+
+    label {
+        font-family: $font_bold;
+        font-size: $sm_txt;
+    }
+
+    div {
+        @include flexCenter;
+        align-items: flex-start;
+        margin: 1rem;
+    }
+
+    .left {
+        grid-area: "left";
+        @include flexCenter;
+
+        .check {
+            display: flex;
+            align-items: center;
+
+            input {
+                width: 1rem;
+                height: 1rem;
+                vertical-align: bottom;
+                position: relative;
+                top: -4px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .right {
+        grid-area: "right";
+        @include flexCenter;
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            resize: none;
+            font-family: $font;
+            font-size: $sm_txt;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .btn {
+            @include def_btn(none, $dark_color, $contrast_color);
+        }
+    }
+}

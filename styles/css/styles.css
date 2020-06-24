@@ -1,0 +1,320 @@
+@font-face {
+  font-family: "Product Sans Regular";
+  src: url("/assets/fonts/Product Sans Regular.ttf"); }
+
+@font-face {
+  font-family: "Product Sans Bold";
+  src: url("/assets/fonts/Product Sans Bold.ttf"); }
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none; }
+
+input:focus {
+  outline: none; }
+
+button:focus {
+  outline: none; }
+
+ul {
+  list-style: none; }
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+html {
+  font-family: "Product Sans Regular"; }
+
+img {
+  max-width: 100%; }
+
+nav {
+  width: 5rem;
+  height: 100vh;
+  position: fixed;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+  transition: 0.7s ease;
+  cursor: pointer;
+  z-index: 9999; }
+  nav:hover {
+    width: 35vw; }
+    nav:hover .navbar {
+      display: block; }
+  nav h1 {
+    font-size: 3rem;
+    font-style: italic;
+    font-family: "Product Sans Bold"; }
+  nav .navbar {
+    display: none; }
+    nav .navbar .navPosition {
+      display: grid;
+      grid-template-columns: repeat(2, 200px);
+      grid-template-areas: "menu" "media";
+      padding-top: 7rem; }
+      nav .navbar .navPosition li > a {
+        color: #333;
+        transition: .2s; }
+        nav .navbar .navPosition li > a:hover {
+          color: #D1E154; }
+      nav .navbar .navPosition .navMenu {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        grid-area: "menu"; }
+        nav .navbar .navPosition .navMenu li {
+          margin-top: 1rem;
+          font-size: 3rem;
+          font-family: "Product Sans Bold"; }
+      nav .navbar .navPosition .navMedia {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        grid-area: "media"; }
+        nav .navbar .navPosition .navMedia li {
+          margin-top: 1rem; }
+
+.Block {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff; }
+  .Block .videoContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -2; }
+  .Block .title {
+    padding: 10rem 0 0 10rem; }
+    .Block .title h1 {
+      font-size: 7rem;
+      letter-spacing: 4px; }
+    .Block .title p {
+      font-size: 1.2rem; }
+  .Block .rightNav {
+    padding-bottom: 4rem;
+    font-size: 1.2rem; }
+    .Block .rightNav ul {
+      display: flex;
+      justify-content: flex-end; }
+    .Block .rightNav a {
+      margin-right: 2.5rem;
+      color: #fff; }
+    .Block .rightNav .btn {
+      padding: .8rem 1.3rem;
+      border: 2px solid #fff;
+      border-radius: 50px;
+      transition: 0.7s;
+      background: none;
+      color: #fff;
+      cursor: pointer;
+      font-family: "Product Sans Regular";
+      font-size: 1.2rem; }
+      .Block .rightNav .btn:hover {
+        background: #fff;
+        color: #333; }
+
+.container {
+  color: #333;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-family: "Product Sans Regular"; }
+  .container h3 {
+    margin-top: 2rem;
+    font-size: 2rem; }
+  .container .imgContainer {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 2rem 6rem; }
+    .container .imgContainer .promoImg {
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.7s; }
+      .container .imgContainer .promoImg:hover {
+        transform: translateY(-13px); }
+      .container .imgContainer .promoImg .infoImg {
+        position: absolute;
+        z-index: 100;
+        position: absolute;
+        color: #fff;
+        left: 0px;
+        top: 350px;
+        padding: 1rem; }
+        .container .imgContainer .promoImg .infoImg h2 {
+          letter-spacing: 1px;
+          font-weight: 100; }
+          .container .imgContainer .promoImg .infoImg h2 span {
+            font-weight: bold; }
+
+.sub {
+  color: #333;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+  .sub .imgTitle {
+    margin-bottom: 2rem;
+    font-size: 1.2rem; }
+  .sub .bgContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 600px);
+    grid-template-areas: "imgTitle offers";
+    grid-gap: 3rem;
+    align-items: center; }
+    .sub .bgContainer .blockTitle {
+      grid-area: "imgTitle";
+      margin-left: 8rem; }
+      .sub .bgContainer .blockTitle img {
+        height: 350px; }
+    .sub .bgContainer .offerOption {
+      grid-area: "offers";
+      display: flex;
+      align-items: center;
+      flex-direction: column; }
+      .sub .bgContainer .offerOption .promoSec {
+        display: flex;
+        padding: .4rem .4rem;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+        width: 600px;
+        cursor: pointer;
+        transition: transform 0.7s; }
+        .sub .bgContainer .offerOption .promoSec:nth-child(2) {
+          margin: 1rem 0; }
+        .sub .bgContainer .offerOption .promoSec:hover {
+          transform: translateX(1rem); }
+        .sub .bgContainer .offerOption .promoSec .iconBg {
+          background: #D1E154;
+          padding: 2rem 2.3rem;
+          border-radius: 10px; }
+        .sub .bgContainer .offerOption .promoSec .promoInfo {
+          padding: 1rem 1.5rem; }
+        .sub .bgContainer .offerOption .promoSec .arrow {
+          width: 3rem;
+          color: #D1E154; }
+  .sub .mailPromo {
+    background: #333;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    padding: 4rem 0; }
+    .sub .mailPromo h2 {
+      font-size: 2rem; }
+    .sub .mailPromo input {
+      background: none;
+      border: none;
+      border-bottom: 2px solid #D1E154;
+      width: 350px;
+      padding: .5rem;
+      font-family: "Product Sans Regular";
+      font-size: 1.2rem;
+      color: #fff;
+      margin: 0 2rem; }
+    .sub .mailPromo button {
+      padding: .8rem 1.3rem;
+      border: 2px solid #D1E154;
+      border-radius: 50px;
+      transition: 0.7s;
+      background: none;
+      color: #fff;
+      cursor: pointer;
+      font-family: "Product Sans Regular";
+      font-size: 1.2rem; }
+      .sub .mailPromo button:hover {
+        background: #D1E154;
+        color: #333; }
+
+.footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 15vh;
+  color: #333;
+  justify-content: center; }
+
+.mainForm {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "left right";
+  color: #333; }
+  .mainForm h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    border-bottom: 4px solid #D1E154;
+    padding: 1rem; }
+  .mainForm input {
+    font-family: "Product Sans Regular";
+    font-size: 1.2rem;
+    border: none;
+    padding: .6rem;
+    border-bottom: 2px solid #D1E154;
+    width: 400px; }
+  .mainForm label {
+    font-family: "Product Sans Bold";
+    font-size: 1.2rem; }
+  .mainForm div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 1rem; }
+  .mainForm .left {
+    grid-area: "left";
+    display: flex;
+    align-items: center;
+    flex-direction: column; }
+    .mainForm .left .check {
+      display: flex;
+      align-items: center; }
+      .mainForm .left .check input {
+        width: 1rem;
+        height: 1rem;
+        vertical-align: bottom;
+        position: relative;
+        top: -4px;
+        cursor: pointer; }
+  .mainForm .right {
+    grid-area: "right";
+    display: flex;
+    align-items: center;
+    flex-direction: column; }
+    .mainForm .right textarea {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      resize: none;
+      font-family: "Product Sans Regular";
+      font-size: 1.2rem; }
+      .mainForm .right textarea:focus {
+        outline: none; }
+    .mainForm .right .btn {
+      padding: .8rem 1.3rem;
+      border: 2px solid #D1E154;
+      border-radius: 50px;
+      transition: 0.7s;
+      background: none;
+      color: #333;
+      cursor: pointer;
+      font-family: "Product Sans Regular";
+      font-size: 1.2rem; }
+      .mainForm .right .btn:hover {
+        background: #D1E154;
+        color: #333; }
